@@ -8,7 +8,7 @@ void Baza::dodawanie(Plyta a)
     {
         if(baza[i].nazwa == a.nazwa)
         {
-            cout<<"P³yta o podanej nazwie ju¿ wystêuje w bazie\n";
+            cout<<"PÅ‚yta o podanej nazwie juÅ¼ wystÄ™uje w bazie\n";
             return;
         }
     }
@@ -25,7 +25,7 @@ void Baza::usuwanie(string s)
             return;
         }
     }
-    cout<<"Nie znaleziono podanej p³yty\n";
+    cout<<"Nie znaleziono podanej pÅ‚yty\n";
 }
 
 void Baza::wyszukaj_album(string s)
@@ -50,6 +50,39 @@ void Baza::wyszukaj_utwor(string s)
             {
                 baza[i].wyswietl();
             }
+        }
+    }
+}
+
+bool cmp(Plyta a, Plyta b, string kryt)
+{
+    if(kryt == "nazwa")
+        return a.nazwa < b.nazwa;
+
+    if(kryt == "wykonawca")
+        return a.wykonawcy < b.wykonawcy;
+
+    if(kryt == "czas")
+        return a.liczba_sekund < b.liczba_sekund;
+
+    if(kryt == "gatunek")
+        return a.rodzaj < b.rodzaj;
+
+    cout<<"Niepoprawne kryterium\n";
+}
+
+void Baza::sortowanie(string kryt)
+{
+    int n = baza.size();
+    for(int i=1; i<n; i++)
+    {
+        int it = i;
+        while( it > 0 && cmp(baza[it],baza[it-1],kryt) /*baza[it] < baza[it-1]*/ )
+        {
+            Plyta p = baza[it-1];
+            baza[it-1] = baza[it];
+            baza[it] = p;
+            it--;
         }
     }
 }

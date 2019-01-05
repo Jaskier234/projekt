@@ -14,4 +14,3 @@ struct Plyta
     Plyta (string, string, int, vector <string>, string);
     void wyswietl();
 };
-

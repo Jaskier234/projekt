@@ -6,15 +6,12 @@ using namespace std;
 
 struct Baza
 {
-    //ka¿da nazwa albumu wystêpuje tylko raz
+    //kaÅ¼da nazwa albumu wystÄ™puje tylko raz
     vector <Plyta> baza;
 
     void dodawanie (Plyta);
-
     void usuwanie (string);
-
     void wyszukaj_album (string);
     void wyszukaj_utwor (string);
     void sortowanie (string);
-
 };

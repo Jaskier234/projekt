@@ -13,5 +13,7 @@ Plyta::Plyta(string n, string w, int ls, vector <string> u, string r )
 
 void Plyta::wyswietl()
 {
-    cout<<nazwa<<endl;
+    cout<<nazwa<<" ";
+    cout<<liczba_sekund<<endl;
+    //tutaj jakoś lepiej
 }

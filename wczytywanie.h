@@ -1,4 +1,4 @@
 #include "baza.h"
 
-void zapisz (Baza);
-Baza wczytaj ();
+void zapisz(Baza);
+Baza wczytaj();
